@@ -1,10 +1,9 @@
+import { HeaderContainer } from '../containers';
 
-
-export default function Event(){
-
-    return(
+export default function Event() {
+    return (
         <>
-            Event
+            <HeaderContainer></HeaderContainer>
         </>
     )
 }
