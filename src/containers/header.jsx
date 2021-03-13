@@ -1,9 +1,11 @@
+import { Header } from '../components/'
 
-export default function HeaderContainer() {
+export default function HeaderContainer({ children }) {
 
     return (
-        <>
-            Header
-        </>
-    )
+        <Header>
+            { children }
+        </Header>
+    );
 }
+
