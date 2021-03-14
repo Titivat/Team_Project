@@ -4,8 +4,11 @@ export default function HeaderContainer({ children }) {
 
     return (
         <Header>
-            { children }
+            <Header.Frame>
+                <Header.Logo ></Header.Logo>
+                <Header.Text >Logo</Header.Text>
+                { children }
+            </Header.Frame>
         </Header>
     );
 }
-
