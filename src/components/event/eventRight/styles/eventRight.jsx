@@ -29,7 +29,7 @@ export const Text = styled.p`
 export const Input = styled.input`
     border-radius: 15px;
     font-size: 20px;
-    width: 530px;
+    width: 570px;
     height: 50px;
     color: ${({ color }) => color.textColor};
     background-color: ${({ color }) => color.backgroundColor};
@@ -51,7 +51,7 @@ export const Input = styled.input`
 export const Description = styled.textarea`
     border-radius: 15px;
     font-size: 20px;
-    width: 530px;
+    width: 570px;
     height: 300px;
     resize: none;
     color: ${({ color }) => color.textColor};
@@ -72,7 +72,7 @@ export const Description = styled.textarea`
 `;
 
 export const DroupDownMenu = styled.select`
-    width: 110px;
+    width: 90px;
     height: 50px;
     color: ${({ color }) => color.textColor};
     background-color: ${({ color }) => color.backgroundColor};
@@ -83,7 +83,7 @@ export const DroupDownItem = styled.option`
 `;
 
 export const Button = styled.button`
-    width: 530px;
+    width: 570px;
     height: 50px;
     color: ${({ color }) => color.textColor};
     background-color: ${({ color }) => color.backgroundColor};
