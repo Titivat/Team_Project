@@ -2,9 +2,6 @@ import styled from 'styled-components/macro';
 
 export const Background = styled.div`
     display: grid;
-    grid-gap: 10px;
-    background-color: #fff;
-    color: #444;
     grid-template-columns: 0.3fr 0.5fr 1fr;
     grid-template-rows: 850px;
 
