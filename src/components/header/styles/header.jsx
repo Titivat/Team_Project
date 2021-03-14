@@ -1,12 +1,11 @@
 import styled from 'styled-components/macro';
-import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Background = styled.div`
     display: flex;
     flex-direction: row;
     height: 80px;
-    color: #EAE8E8;
-    background-color: #03045E;
+    color: ${({ color }) => color.text};
+    background-color: ${({ color }) => color.background};
 `;
 
 export const Container = styled.div`
@@ -21,11 +20,11 @@ export const Logo = styled.img`
   width: 55px;
   margin-right: 20px;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color: ${({ logoColor }) => logoColor};
 `;
 
 export const TextLogo = styled.p`
-    color: #FFFFFF;
+    color: ${({ textColor }) => textColor};
     padding-bottom: 10px;
     font-size: 30px;
 `;

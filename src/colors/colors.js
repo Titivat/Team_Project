@@ -1,5 +1,4 @@
 
-
 export const PRIMARY_COLOR_1 = "#F4F4F4";
 export const PRIMARY_COLOR_2 = "#CAF0F8";
 export const PRIMARY_COLOR_3 = "#CAF0F8";
