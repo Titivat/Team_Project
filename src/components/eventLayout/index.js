@@ -1,9 +1,14 @@
+import * as COLORS from '../../colors/colors';
 import {
     Background,
     LeftBackground,
     MiddleBackground,
     RightBackground
 } from './styles/eventLayout';
+
+const LEFT_BACKGROUND = "white";
+const MIDDLE_BACKGROUND = COLORS.PRIMARY_COLOR_3;
+const RIGHT_BACKGROUND = "white";
 
 export default function EventLayout({ children, ...restProps }) {
     return (
@@ -15,7 +20,7 @@ export default function EventLayout({ children, ...restProps }) {
 
 EventLayout.Left = function EventLayoutLeft({ children, ...restProps }) {
     return (
-        <LeftBackground {...restProps}>
+        <LeftBackground backgroundColor = {LEFT_BACKGROUND} {...restProps}>
             {children}
         </LeftBackground>
     );
@@ -23,7 +28,7 @@ EventLayout.Left = function EventLayoutLeft({ children, ...restProps }) {
 
 EventLayout.Middle = function EventLayoutMiddle({ children, ...restProps }) {
     return (
-        <MiddleBackground {...restProps}>
+        <MiddleBackground   backgroundColor = {MIDDLE_BACKGROUND} {...restProps}>
             {children}
         </MiddleBackground>
     );
@@ -31,7 +36,7 @@ EventLayout.Middle = function EventLayoutMiddle({ children, ...restProps }) {
 
 EventLayout.Right = function EventLayoutRight({ children, ...restProps }) {
     return (
-        <RightBackground {...restProps}>
+        <RightBackground backgroundColor = {RIGHT_BACKGROUND} {...restProps}>
             {children}
         </RightBackground>
     );
