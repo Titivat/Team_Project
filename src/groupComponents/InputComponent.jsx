@@ -1,19 +1,20 @@
 import { EventRight } from '../components'
 import React, { useState } from "react";
+import * as API from '../api/callApi';
 
 export default function InputComponent() {
 
     const range = (start, end) => {
-        return Array(end - start + 1).fill().map((_, idx) => start + idx).map(String)
+        return Array(end - start + 1).fill().map((_, idx) => start + idx)
     }
 
     const handleSubmit = (evt) => {
         //evt.preventDefault();
-        alert(`ShareTo: ${shareTo} \n Title: ${title} \n Description: ${description}
+        const data = `ShareTo: ${shareTo} \n Title: ${title} \n Description: ${description}
                 \n Day: ${day} \n Month: ${month} \nYear: ${year}
                 \n Hour: ${hour} \n Minute: ${minute} \n Secound: ${secound}
             `
-        );
+        API.getEvent('path', data)
     }
     const [shareTo, setshareTo] = useState("");
     const [title, setTitle] = useState("");
