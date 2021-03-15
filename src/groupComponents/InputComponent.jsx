@@ -2,19 +2,10 @@ import { EventRight } from '../components'
 import React, { useState } from "react";
 
 export default function InputComponent() {
-    const [shareTo, setshareTo] = useState("");
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
 
-    const [day, setDay] = useState("");
-    const [month, setMonth] = useState("");
-    const [year, setYear] = useState("");
-
-    const [hour, setHour] = useState("");
-    const [minute, setMinute] = useState("");
-    const [secound, setSecound] = useState("");
-
-    
+    const range = (start, end) => {
+        return Array(end - start + 1).fill().map((_, idx) => start + idx).map(String)
+    }
 
     const handleSubmit = (evt) => {
         //evt.preventDefault();
@@ -24,6 +15,27 @@ export default function InputComponent() {
             `
         );
     }
+    const [shareTo, setshareTo] = useState("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+
+    const [day, setDay] = useState("");
+    const [month, setMonth] = useState(new Date().getMonth() + 1);
+    const [year, setYear] = useState("");
+
+    const [hour, setHour] = useState("");
+    const [minute, setMinute] = useState("");
+    const [secound, setSecound] = useState("");
+
+    const monthToDay = { 1: "31", 2: "28", 3: "31", 4: '30', 5: '31', 6: "30", 7: "31", 8: '31', 9: '30', 10: '31', 11: '30', 12: '31' }
+    const days = range(1, monthToDay[month]);
+    const months = range(1, 12);
+    const nowYear = new Date().getFullYear();
+    const years = range(nowYear, nowYear + 100);
+
+    const hours = range(0, 24);
+    const minutes = range(0, 59);
+    const secounds = range(0, 59);
 
     return (
         <EventRight >
@@ -62,9 +74,11 @@ export default function InputComponent() {
                             required
                         >
                             <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>1</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>2</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>3</EventRight.DroupDownItem>
+                            {
+                                days.map((value) => {
+                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                })
+                            }
                         </EventRight.DroupDownMenu>
                     </EventRight.LayoutHorizontal>
 
@@ -76,9 +90,11 @@ export default function InputComponent() {
                             required
                         >
                             <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>1</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>2</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>3</EventRight.DroupDownItem>
+                            {
+                                months.map((value) => {
+                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                })
+                            }
                         </EventRight.DroupDownMenu>
                     </EventRight.LayoutHorizontal>
 
@@ -90,9 +106,11 @@ export default function InputComponent() {
                             required
                         >
                             <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>2000</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>2001</EventRight.DroupDownItem>
-                            <EventRight.DroupDownItem>2002</EventRight.DroupDownItem>
+                            {
+                                years.map((value) => {
+                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                })
+                            }
                         </EventRight.DroupDownMenu>
                     </EventRight.LayoutHorizontal>
 
@@ -105,9 +123,11 @@ export default function InputComponent() {
                                 required
                             >
                                 <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>1</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>2</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>3</EventRight.DroupDownItem>
+                                {
+                                    hours.map((value) => {
+                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    })
+                                }
                             </EventRight.DroupDownMenu>
                         </EventRight.LayoutHorizontal>
 
@@ -119,9 +139,11 @@ export default function InputComponent() {
                                 required
                             >
                                 <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>1</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>2</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>3</EventRight.DroupDownItem>
+                                {
+                                    minutes.map((value) => {
+                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    })
+                                }
                             </EventRight.DroupDownMenu>
                         </EventRight.LayoutHorizontal>
 
@@ -133,9 +155,11 @@ export default function InputComponent() {
                                 required
                             >
                                 <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>1</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>2</EventRight.DroupDownItem>
-                                <EventRight.DroupDownItem>3</EventRight.DroupDownItem>
+                                {
+                                    secounds.map((value) => {
+                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    })
+                                }
                             </EventRight.DroupDownMenu>
                         </EventRight.LayoutHorizontal>
                     </EventRight.LayoutVertical>
