@@ -1,5 +1,7 @@
 import {
     Background,
+    LayoutVertical,
+    LayoutHorizontal,
     Forum,
     Titile,
     Text,
@@ -23,6 +25,22 @@ export default function EventRight({ children, ...restProps }) {
         <Background backgroundColor={backgroundColor} {...restProps}>
             {children}
         </Background>
+    );
+}
+
+EventRight.LayoutVertical = function EventRightLayoutVertical({ children, ...restProps }) {
+    return (
+        <LayoutVertical {...restProps}>
+            {children}
+        </LayoutVertical>
+    );
+}
+
+EventRight.LayoutHorizontal = function EventRightLayoutHorizontal({ children, ...restProps }) {
+    return (
+        <LayoutHorizontal {...restProps}>
+            {children}
+        </LayoutHorizontal>
     );
 }
 
