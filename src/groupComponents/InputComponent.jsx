@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import * as API from '../api/callApi';
 
 export default function InputComponent() {
-
     const range = (start, end) => {
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
     }
