@@ -5,7 +5,7 @@ export default function Login() {
 
     return (
         <>
-            Login
+            Login1
         </>
     )
 }
