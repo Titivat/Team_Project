@@ -1,5 +1,4 @@
 import { Link as ReachRouterLink } from 'react-router-dom';
-import * as COLORS from '../../constants/colors';
 import {
     Background,
     Logo,

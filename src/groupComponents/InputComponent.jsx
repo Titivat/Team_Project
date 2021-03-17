@@ -43,11 +43,26 @@ export default function InputComponent() {
     const minutes = range(0, 59);
     const secounds = range(0, 59);
 
+    const textColor = "red"
+    const backgroundColor = "blue"
+    const theme = {
+        background: backgroundColor,
+        textColor: textColor
+    }
+    const buttonTheme = {
+        background: "yellow",
+        textColor: "black"
+    }
+
     return (
         <Input >
-            <Input.Forum onSubmit={handleSubmit}>
-                <Input.Title>Try it</Input.Title>
+            <Input.Forum
+                onSubmit={handleSubmit}
+                color={theme}
+            >
+                <Input.Title textColor={textColor}>Try it</Input.Title>
                 <Input.UserInput
+                    color={theme}
                     value={shareTo}
                     onChange={e => setshareTo(e.target.value)}
                     placeholder="share to"
@@ -56,6 +71,7 @@ export default function InputComponent() {
                 </Input.UserInput>
 
                 <Input.UserInput
+                    color={theme}
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     placeholder="Title"
@@ -63,6 +79,7 @@ export default function InputComponent() {
                 ></Input.UserInput>
 
                 <Input.Description
+                    color={theme}
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     placeholder="description"
@@ -70,52 +87,55 @@ export default function InputComponent() {
                 >
                 </Input.Description>
 
-                <Input.Title>Time:</Input.Title>
+                <Input.Title textColor={textColor}>Time:</Input.Title>
 
                 <Input.LayoutVertical gap={'10px'} >
                     <Input.LayoutHorizontal>
-                        <Input.Text>Day:</Input.Text>
+                        <Input.Text textColor={textColor}>Day:</Input.Text>
                         <Input.DroupDownMenu
+                            color={theme}
                             value={day}
                             onChange={e => setDay(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                             {
                                 days.map((value) => {
-                                    return <Input.DroupDownItem >{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={theme} >{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
                     </Input.LayoutHorizontal>
 
                     <Input.LayoutHorizontal>
-                        <Input.Text>Month:</Input.Text>
+                        <Input.Text textColor={textColor}>Month:</Input.Text>
                         <Input.DroupDownMenu
+                            color={theme}
                             value={month}
                             onChange={e => setMonth(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                             {
                                 months.map((value) => {
-                                    return <Input.DroupDownItem >{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={theme} >{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
                     </Input.LayoutHorizontal>
 
                     <Input.LayoutHorizontal>
-                        <Input.Text>Year:</Input.Text>
+                        <Input.Text textColor={textColor} >Year:</Input.Text>
                         <Input.DroupDownMenu
+                            color={theme}
                             value={year}
                             onChange={e => setYear(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                             {
                                 years.map((value) => {
-                                    return <Input.DroupDownItem>{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
@@ -123,55 +143,59 @@ export default function InputComponent() {
 
                     <Input.LayoutVertical>
                         <Input.LayoutHorizontal>
-                            <Input.Text>Hr:</Input.Text>
+                            <Input.Text textColor={textColor}>Hr:</Input.Text>
                             <Input.DroupDownMenu
+                                color={theme}
                                 value={hour}
                                 onChange={e => setHour(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                                 {
                                     hours.map((value) => {
-                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>
                         </Input.LayoutHorizontal>
 
                         <Input.LayoutHorizontal>
-                            <Input.Text>Min:</Input.Text>
+                            <Input.Text textColor={textColor}>Min:</Input.Text>
                             <Input.DroupDownMenu
+                                color={theme}
                                 value={minute}
                                 onChange={e => setMinute(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                                 {
                                     minutes.map((value) => {
-                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>
                         </Input.LayoutHorizontal>
 
                         <Input.LayoutHorizontal>
-                            <Input.Text>Sec:</Input.Text>
+                            <Input.Text textColor={textColor}>Sec:</Input.Text>
                             <Input.DroupDownMenu
+                                color={theme}
                                 value={secound}
                                 onChange={e => setSecound(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
                                 {
                                     secounds.map((value) => {
-                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>
                         </Input.LayoutHorizontal>
                     </Input.LayoutVertical>
                 </Input.LayoutVertical>
-                <Input.Button type="summit">Send</Input.Button>
+
+                <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
             </Input.Forum>
         </Input >
     );
