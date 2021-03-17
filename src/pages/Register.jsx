@@ -1,9 +1,10 @@
+import { HeaderContainer } from '../containers'
 
 export default function Register(){
 
     return(
         <>
-            Register
+            <HeaderContainer isLogin={true} />
         </>
     )
 }

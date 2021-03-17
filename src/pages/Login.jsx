@@ -1,11 +1,10 @@
-
-
+import { HeaderContainer } from '../containers'
 
 export default function Login() {
 
     return (
         <>
-            Login2
+            <HeaderContainer isLogin={true} />
         </>
     )
 }

@@ -37,4 +37,10 @@ export const TextLogo = styled.p`
 export const Button = styled.button`
   margin-right: 10px;
   font-size: 25px;
+  border-radius: 7px;
+  color: ${({ color }) => color.text};
+  background-color: ${({ color }) => color.background};
+  &:hover {
+    background-color: red;
+  }
 `;
