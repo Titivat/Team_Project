@@ -1,4 +1,4 @@
-import { EventRight } from '../components'
+import { Input } from '../components'
 import React, { useState } from "react";
 import { toIso } from '../function'
 import * as API from '../api/callApi';
@@ -19,7 +19,6 @@ export default function InputComponent() {
             "reciepient": shareTo,
             "sent": false
         }
-
         API.postEvent('mail/', data);
     }
     const [shareTo, setshareTo] = useState("");
@@ -45,135 +44,135 @@ export default function InputComponent() {
     const secounds = range(0, 59);
 
     return (
-        <EventRight >
-            <EventRight.Forum onSubmit={handleSubmit}>
-                <EventRight.Title>Try it</EventRight.Title>
-                <EventRight.Input
+        <Input >
+            <Input.Forum onSubmit={handleSubmit}>
+                <Input.Title>Try it</Input.Title>
+                <Input.UserInput
                     value={shareTo}
                     onChange={e => setshareTo(e.target.value)}
                     placeholder="share to"
                     required
                 >
-                </EventRight.Input>
+                </Input.UserInput>
 
-                <EventRight.Input
+                <Input.UserInput
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     placeholder="Title"
                     required
-                ></EventRight.Input>
+                ></Input.UserInput>
 
-                <EventRight.Description
+                <Input.Description
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     placeholder="description"
                     required
                 >
-                </EventRight.Description>
+                </Input.Description>
 
-                <EventRight.Title>Time:</EventRight.Title>
+                <Input.Title>Time:</Input.Title>
 
-                <EventRight.LayoutVertical gap={'10px'} >
-                    <EventRight.LayoutHorizontal>
-                        <EventRight.Text>Day:</EventRight.Text>
-                        <EventRight.DroupDownMenu
+                <Input.LayoutVertical gap={'10px'} >
+                    <Input.LayoutHorizontal>
+                        <Input.Text>Day:</Input.Text>
+                        <Input.DroupDownMenu
                             value={day}
                             onChange={e => setDay(e.target.value)}
                             required
                         >
-                            <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
                             {
                                 days.map((value) => {
-                                    return <EventRight.DroupDownItem >{value}</EventRight.DroupDownItem>
+                                    return <Input.DroupDownItem >{value}</Input.DroupDownItem>
                                 })
                             }
-                        </EventRight.DroupDownMenu>
-                    </EventRight.LayoutHorizontal>
+                        </Input.DroupDownMenu>
+                    </Input.LayoutHorizontal>
 
-                    <EventRight.LayoutHorizontal>
-                        <EventRight.Text>Month:</EventRight.Text>
-                        <EventRight.DroupDownMenu
+                    <Input.LayoutHorizontal>
+                        <Input.Text>Month:</Input.Text>
+                        <Input.DroupDownMenu
                             value={month}
                             onChange={e => setMonth(e.target.value)}
                             required
                         >
-                            <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
                             {
                                 months.map((value) => {
-                                    return <EventRight.DroupDownItem >{value}</EventRight.DroupDownItem>
+                                    return <Input.DroupDownItem >{value}</Input.DroupDownItem>
                                 })
                             }
-                        </EventRight.DroupDownMenu>
-                    </EventRight.LayoutHorizontal>
+                        </Input.DroupDownMenu>
+                    </Input.LayoutHorizontal>
 
-                    <EventRight.LayoutHorizontal>
-                        <EventRight.Text>Year:</EventRight.Text>
-                        <EventRight.DroupDownMenu
+                    <Input.LayoutHorizontal>
+                        <Input.Text>Year:</Input.Text>
+                        <Input.DroupDownMenu
                             value={year}
                             onChange={e => setYear(e.target.value)}
                             required
                         >
-                            <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                            <Input.DroupDownItem value="">None</Input.DroupDownItem>
                             {
                                 years.map((value) => {
-                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    return <Input.DroupDownItem>{value}</Input.DroupDownItem>
                                 })
                             }
-                        </EventRight.DroupDownMenu>
-                    </EventRight.LayoutHorizontal>
+                        </Input.DroupDownMenu>
+                    </Input.LayoutHorizontal>
 
-                    <EventRight.LayoutVertical>
-                        <EventRight.LayoutHorizontal>
-                            <EventRight.Text>Hr:</EventRight.Text>
-                            <EventRight.DroupDownMenu
+                    <Input.LayoutVertical>
+                        <Input.LayoutHorizontal>
+                            <Input.Text>Hr:</Input.Text>
+                            <Input.DroupDownMenu
                                 value={hour}
                                 onChange={e => setHour(e.target.value)}
                                 required
                             >
-                                <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
                                 {
                                     hours.map((value) => {
-                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
                                     })
                                 }
-                            </EventRight.DroupDownMenu>
-                        </EventRight.LayoutHorizontal>
+                            </Input.DroupDownMenu>
+                        </Input.LayoutHorizontal>
 
-                        <EventRight.LayoutHorizontal>
-                            <EventRight.Text>Min:</EventRight.Text>
-                            <EventRight.DroupDownMenu
+                        <Input.LayoutHorizontal>
+                            <Input.Text>Min:</Input.Text>
+                            <Input.DroupDownMenu
                                 value={minute}
                                 onChange={e => setMinute(e.target.value)}
                                 required
                             >
-                                <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
                                 {
                                     minutes.map((value) => {
-                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
                                     })
                                 }
-                            </EventRight.DroupDownMenu>
-                        </EventRight.LayoutHorizontal>
+                            </Input.DroupDownMenu>
+                        </Input.LayoutHorizontal>
 
-                        <EventRight.LayoutHorizontal>
-                            <EventRight.Text>Sec:</EventRight.Text>
-                            <EventRight.DroupDownMenu
+                        <Input.LayoutHorizontal>
+                            <Input.Text>Sec:</Input.Text>
+                            <Input.DroupDownMenu
                                 value={secound}
                                 onChange={e => setSecound(e.target.value)}
                                 required
                             >
-                                <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
+                                <Input.DroupDownItem value="">None</Input.DroupDownItem>
                                 {
                                     secounds.map((value) => {
-                                        return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                        return <Input.DroupDownItem>{value}</Input.DroupDownItem>
                                     })
                                 }
-                            </EventRight.DroupDownMenu>
-                        </EventRight.LayoutHorizontal>
-                    </EventRight.LayoutVertical>
-                </EventRight.LayoutVertical>
-                <EventRight.Button type="summit">Send</EventRight.Button>
-            </EventRight.Forum>
-        </EventRight >
+                            </Input.DroupDownMenu>
+                        </Input.LayoutHorizontal>
+                    </Input.LayoutVertical>
+                </Input.LayoutVertical>
+                <Input.Button type="summit">Send</Input.Button>
+            </Input.Forum>
+        </Input >
     );
 }

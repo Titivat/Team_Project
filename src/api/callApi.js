@@ -2,6 +2,7 @@ const axios = require('axios');
 const API_PATH = "https://kmitlthirdyearproject.herokuapp.com/api"
 
 export const postEvent = async function postEvent(path, postData) {
+
     try {
         let response = await axios({
             method: 'post',
@@ -11,6 +12,7 @@ export const postEvent = async function postEvent(path, postData) {
         });
         return response;
     } catch (err) {
+        alert("Error " + err.message );
         return err
     }
 }
@@ -24,6 +26,7 @@ export const getEvent = async function getEvent(path) {
         });
         return response;
     } catch (err) {
+        alert("Error " + err.message );
         return err
     }
 }

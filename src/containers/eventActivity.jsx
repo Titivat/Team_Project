@@ -1,22 +1,22 @@
-import { EventLayout } from '../components'
+import { Layout } from '../components'
 import { InputComponent } from '../groupComponents'
 
-export default function EventActvity() {
+export default function Actvity() {
 
     return (
-        <EventLayout>
-            <EventLayout.Left>
+        <Layout>
+            <Layout.Left>
                 <InputComponent />
-            </EventLayout.Left>
+            </Layout.Left>
 
-            <EventLayout.Middle>
+            <Layout.Middle>
                 2
-            </EventLayout.Middle>
+            </Layout.Middle>
 
-            <EventLayout.Right>
+            <Layout.Right>
 
-            </EventLayout.Right>
+            </Layout.Right>
 
-        </EventLayout>
+        </Layout>
     );
 }
