@@ -6,7 +6,7 @@ export default function EventActvity() {
     return (
         <EventLayout>
             <EventLayout.Left>
-                1
+                <InputComponent />
             </EventLayout.Left>
 
             <EventLayout.Middle>
@@ -14,7 +14,7 @@ export default function EventActvity() {
             </EventLayout.Middle>
 
             <EventLayout.Right>
-                <InputComponent />
+
             </EventLayout.Right>
 
         </EventLayout>

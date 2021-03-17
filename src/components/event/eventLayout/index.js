@@ -1,4 +1,4 @@
-import * as COLORS from '../../../colors/colors';
+import * as COLORS from '../../../constants/colors';
 import {
     Background,
     LeftBackground,

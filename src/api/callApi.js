@@ -1,8 +1,7 @@
 const axios = require('axios');
-const API_PATH = "https://kmitlthirdyearproject.herokuapp.com/api/"
+const API_PATH = "https://kmitlthirdyearproject.herokuapp.com/api"
 
 export const postEvent = async function postEvent(path, postData) {
-    console.log("I post");
     try {
         let response = await axios({
             method: 'post',

@@ -15,6 +15,11 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const RightContainer = styled(Container)`
+  width: 100%;
+  justify-content: flex-end;
+`;
+
 export const Logo = styled.img`
   height: 50px;
   width: 55px;
@@ -27,4 +32,9 @@ export const TextLogo = styled.p`
     color: ${({ textColor }) => textColor};
     padding-bottom: 10px;
     font-size: 30px;
+`;
+
+export const Button = styled.button`
+  margin-right: 10px;
+  font-size: 25px;
 `;

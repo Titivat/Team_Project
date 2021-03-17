@@ -1,6 +1,8 @@
 import { EventRight } from '../components'
 import React, { useState } from "react";
+import { toIso } from '../function'
 import * as API from '../api/callApi';
+
 
 export default function InputComponent() {
     const range = (start, end) => {
@@ -8,12 +10,16 @@ export default function InputComponent() {
     }
 
     const handleSubmit = (evt) => {
-        evt.preventDefault();
-        console.log("I summited");
-        const data = `ShareTo: ${shareTo} \n Title: ${title} \n Description: ${description}
-                \n Day: ${day} \n Month: ${month} \nYear: ${year}
-                \n Hour: ${hour} \n Minute: ${minute} \n Secound: ${secound}
-            `
+        //evt.preventDefault();
+        const data = {
+            "owner": 1,
+            "subject": title,
+            "message": description,
+            "send_on": toIso(day, month, year, hour, minute, secound),
+            "reciepient": shareTo,
+            "sent": false
+        }
+
         API.postEvent('mail/', data);
     }
     const [shareTo, setshareTo] = useState("");
@@ -41,6 +47,7 @@ export default function InputComponent() {
     return (
         <EventRight >
             <EventRight.Forum onSubmit={handleSubmit}>
+                <EventRight.Title>Try it</EventRight.Title>
                 <EventRight.Input
                     value={shareTo}
                     onChange={e => setshareTo(e.target.value)}
@@ -77,7 +84,7 @@ export default function InputComponent() {
                             <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
                             {
                                 days.map((value) => {
-                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    return <EventRight.DroupDownItem >{value}</EventRight.DroupDownItem>
                                 })
                             }
                         </EventRight.DroupDownMenu>
@@ -93,7 +100,7 @@ export default function InputComponent() {
                             <EventRight.DroupDownItem value="">None</EventRight.DroupDownItem>
                             {
                                 months.map((value) => {
-                                    return <EventRight.DroupDownItem>{value}</EventRight.DroupDownItem>
+                                    return <EventRight.DroupDownItem >{value}</EventRight.DroupDownItem>
                                 })
                             }
                         </EventRight.DroupDownMenu>
