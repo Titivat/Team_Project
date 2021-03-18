@@ -6,8 +6,18 @@ export const Background = styled.div`
 `;
 
 export const Forum = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 40px 30px;
+    padding: 20px;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};
+
+    @media only screen and (max-width: 800px){
+        margin: 30px 20px;
+        width: 400px;
+    }
 `;
 
 export const Title = styled.p`

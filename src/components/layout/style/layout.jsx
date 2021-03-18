@@ -14,6 +14,28 @@ export const MainContainer = styled.div`
     }
 `;
 
+export const LoginContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    margin: 0 10%;
+
+    @media only screen and (max-width: 800px){
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+`;
+
+export const RegisterContainer = styled.div`
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    margin: 0 10%;
+
+    @media only screen and (max-width: 800px){
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+`;
+
 export const Container = styled.div`
     background-color: ${({ background }) => background};
 `;
