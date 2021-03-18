@@ -1,10 +1,11 @@
-import { HeaderContainer } from '../containers'
+import { HeaderContainer, RegisterContainer } from '../containers'
 
-export default function Register(){
+export default function Register() {
 
-    return(
+    return (
         <>
             <HeaderContainer isLogin={true} />
+            <RegisterContainer/>
         </>
     )
 }

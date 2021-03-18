@@ -3,21 +3,22 @@ import React, { useState } from "react";
 import * as API from '../api/callApi';
 
 
-export default function LoginInputComponent() {
+export default function RegisterInputComponent() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
         const data = {
             "username": userName,
             "email": email,
-            "password": password,
+            "password1": password1,
+            "password2": password2,
         }
-        API.get('login/', data);
+        API.post('registration/', data);
     }
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
+    const [password1, setPassword1] = useState("");
+    const [password2, setPassword2] = useState("");
 
     const textColor = "red"
     const backgroundColor = "blue"
@@ -37,7 +38,7 @@ export default function LoginInputComponent() {
                 color={theme}
             >
                 <Input.LayoutHorizontal gap={'30px'}>
-                    <Input.Title textColor={textColor}>Login</Input.Title>
+                    <Input.Title textColor={textColor}>Register</Input.Title>
                     <Input.UserInput
                         color={theme}
                         value={userName}
@@ -57,9 +58,17 @@ export default function LoginInputComponent() {
 
                     <Input.UserInput
                         color={theme}
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        placeholder="password"
+                        value={password1}
+                        onChange={e => setPassword1(e.target.value)}
+                        placeholder="password1"
+                        required
+                    >
+                    </Input.UserInput>
+                    <Input.UserInput
+                        color={theme}
+                        value={password2}
+                        onChange={e => setPassword2(e.target.value)}
+                        placeholder="conferm password"
                         required
                     >
                     </Input.UserInput>
