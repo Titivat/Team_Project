@@ -32,12 +32,13 @@ export default function LoginInputComponent() {
 
     return (
         <Input >
-            <Input.Forum
+            <Input.LoginForum
                 onSubmit={handleSubmit}
                 color={theme}
             >
+                <Input.Title textColor={textColor}>Login</Input.Title>
                 <Input.LayoutHorizontal gap={'30px'}>
-                    <Input.Title textColor={textColor}>Login</Input.Title>
+
                     <Input.UserInput
                         color={theme}
                         value={userName}
@@ -65,7 +66,7 @@ export default function LoginInputComponent() {
                     </Input.UserInput>
                     <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
                 </Input.LayoutHorizontal>
-            </Input.Forum>
+            </Input.LoginForum>
         </Input >
     );
 }

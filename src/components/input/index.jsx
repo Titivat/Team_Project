@@ -1,6 +1,8 @@
 import {
     Background,
     Forum,
+    LoginForum,
+    RegisterForum,
     Title,
     Text,
     UserInput,
@@ -8,6 +10,7 @@ import {
     Button,
     LayoutVertical,
     LayoutHorizontal,
+    LayoutTimeVertical,
     DroupDownMenu,
     DroupDownItem
 } from './style/input';
@@ -23,6 +26,18 @@ export default function Input({ children, ...restProps }) {
 Input.Forum = function InputForum({ children, ...restProps }) {
     return (
         <Forum {...restProps}>{children}</Forum>
+    );
+};
+
+Input.LoginForum = function InputLoginForum({ children, ...restProps }) {
+    return (
+        <LoginForum {...restProps}>{children}</LoginForum>
+    );
+};
+
+Input.RegisterForum = function InputRegisterForum({ children, ...restProps }) {
+    return (
+        <RegisterForum {...restProps}>{children}</RegisterForum>
     );
 };
 
@@ -57,11 +72,18 @@ Input.LayoutVertical = function InputLayoutVertical({ children, ...restProps }) 
     );
 };
 
+Input.LayoutTimeVertical = function InputLayoutTimeVertical({ children, ...restProps }) {
+    return (
+        <LayoutTimeVertical {...restProps}>{children}</LayoutTimeVertical>
+    );
+};
+
 Input.LayoutHorizontal = function InputLayoutHorizontal({ children, ...restProps }) {
     return (
         <LayoutHorizontal {...restProps}>{children}</LayoutHorizontal>
     );
 };
+
 
 Input.DroupDownMenu = function InputDroupDownMenu({ children, ...restProps }) {
     return (

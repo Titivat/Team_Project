@@ -89,7 +89,7 @@ export default function InputComponent() {
 
                 <Input.Title textColor={textColor}>Time:</Input.Title>
 
-                <Input.LayoutVertical gap={'10px'} >
+                <Input.LayoutTimeVertical gap={'10px'} >
                     <Input.LayoutHorizontal>
                         <Input.Text textColor={textColor}>Day:</Input.Text>
                         <Input.DroupDownMenu
@@ -193,7 +193,7 @@ export default function InputComponent() {
                             </Input.DroupDownMenu>
                         </Input.LayoutHorizontal>
                     </Input.LayoutVertical>
-                </Input.LayoutVertical>
+                </Input.LayoutTimeVertical>
 
                 <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
             </Input.Forum>

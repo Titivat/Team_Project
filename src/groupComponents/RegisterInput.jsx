@@ -33,12 +33,12 @@ export default function RegisterInputComponent() {
 
     return (
         <Input >
-            <Input.Forum
+            <Input.RegisterForum
                 onSubmit={handleSubmit}
                 color={theme}
             >
+                <Input.Title textColor={textColor}>Register</Input.Title>
                 <Input.LayoutHorizontal gap={'30px'}>
-                    <Input.Title textColor={textColor}>Register</Input.Title>
                     <Input.UserInput
                         color={theme}
                         value={userName}
@@ -60,7 +60,7 @@ export default function RegisterInputComponent() {
                         color={theme}
                         value={password1}
                         onChange={e => setPassword1(e.target.value)}
-                        placeholder="password1"
+                        placeholder="password"
                         required
                     >
                     </Input.UserInput>
@@ -74,7 +74,7 @@ export default function RegisterInputComponent() {
                     </Input.UserInput>
                     <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
                 </Input.LayoutHorizontal>
-            </Input.Forum>
+            </Input.RegisterForum>
         </Input >
     );
 }
