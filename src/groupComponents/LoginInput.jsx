@@ -2,7 +2,6 @@ import { Input } from '../components'
 import React, { useState } from "react";
 import * as API from '../api/callApi';
 
-
 export default function LoginInputComponent() {
 
     const handleSubmit = (evt) => {
@@ -64,7 +63,7 @@ export default function LoginInputComponent() {
                         required
                     >
                     </Input.UserInput>
-                    <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
+                    <Input.Button color={buttonTheme} type="summit">Login</Input.Button>
                 </Input.LayoutHorizontal>
             </Input.LoginForum>
         </Input >

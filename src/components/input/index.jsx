@@ -1,3 +1,4 @@
+import { Link as ReachRouterLink } from 'react-router-dom';
 import {
     Background,
     Forum,
@@ -50,6 +51,14 @@ Input.Title = function InputTitle({ children, ...restProps }) {
 Input.Text = function InputText({ children, ...restProps }) {
     return (
         <Text {...restProps}>{children}</Text>
+    );
+};
+
+Input.TextLink= function InputTextLink({ to, children, ...restProps }) {
+    return (
+        <ReachRouterLink style={{ textDecoration: 'none' }} to={to}>
+            <Text {...restProps}>{children}</Text>
+        </ReachRouterLink>
     );
 };
 

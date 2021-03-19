@@ -32,7 +32,7 @@ export default function RegisterInputComponent() {
     }
 
     return (
-        <Input >
+        <Input>
             <Input.RegisterForum
                 onSubmit={handleSubmit}
                 color={theme}
@@ -72,7 +72,7 @@ export default function RegisterInputComponent() {
                         required
                     >
                     </Input.UserInput>
-                    <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
+                    <Input.Button color={buttonTheme} type="summit">Register</Input.Button>
                 </Input.LayoutHorizontal>
             </Input.RegisterForum>
         </Input >

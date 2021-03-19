@@ -25,19 +25,19 @@ export const Forum = styled.form`
 `;
 
 export const LoginForum = styled(Forum)`
-    margin: 5% 10%;
+    margin: 3% 3%;
     width: 420px;
     height: 400px;
 
     @media only screen and (max-width: 800px){
-        margin: 5% 5px;
+        margin: 3% 5px;
     }
 `;
 
 export const RegisterForum = styled(Forum)`
     width: 420px;
     height: 500px;
-    margin: 5% 0 0 55%;
+    margin: 5% auto;
 
     @media only screen and (max-width: 1200px){
         margin: 5% 0 0 4%;

@@ -26,7 +26,7 @@ export const LoginContainer = styled.div`
 
 export const RegisterContainer = styled.div`
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 1fr 0.7fr;
 
     @media only screen and (max-width: 800px){
         grid-template-columns: 1fr;
