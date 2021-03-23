@@ -41,12 +41,14 @@ export default function RegisterInputComponent({ history }) {
             "password2": password2,
         }
 
-        const respond = await API.post('registration/', data);
+        const response = await API.post('registration/', data);
 
         loading(false);
 
-        if( respond === 'error'){
-
+        if (Object.prototype.toString.call(response) === "[object Error]") {
+            alert("Error " + response.message);
+        } else {
+            alert("It work ");
         }
     }
 
@@ -94,7 +96,7 @@ export default function RegisterInputComponent({ history }) {
                     <Input.Button color={buttonTheme} type="summit">Register</Input.Button>
                 </Input.LayoutHorizontal>
 
-                { (isLoading) && (<Input.Text>Loading</Input.Text>) }
+                {(isLoading) && (<Input.Text>Loading</Input.Text>)}
             </Input.RegisterForum>
         </Input >
     );

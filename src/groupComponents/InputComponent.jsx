@@ -26,8 +26,8 @@ export default function InputComponent() {
 
         loading(false);
 
-        if (respond === 'error') {
-
+        if (respond === 201) {
+            alert("sent successfully")
         }
     }
 

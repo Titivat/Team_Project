@@ -42,8 +42,10 @@ export default function LoginInputComponent() {
 
         loading(false);
 
-        if (response === 'error') {
-
+        if (Object.prototype.toString.call(response) === "[object Error]") {
+            alert("Error " + response.message);
+        } else {
+            alert("It work ");
         }
 
     }
