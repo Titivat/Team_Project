@@ -46,7 +46,7 @@ export default function RegisterInputComponent({ history }) {
         loading(false);
 
         if( respond === 'error'){
-            
+
         }
     }
 
@@ -94,9 +94,7 @@ export default function RegisterInputComponent({ history }) {
                     <Input.Button color={buttonTheme} type="summit">Register</Input.Button>
                 </Input.LayoutHorizontal>
 
-                {
-                    (isLoading) && (<Input.Text>Loading</Input.Text>)
-                }
+                { (isLoading) && (<Input.Text>Loading</Input.Text>) }
             </Input.RegisterForum>
         </Input >
     );

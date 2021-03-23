@@ -3,16 +3,8 @@ import React, { useState } from "react";
 import * as API from '../api/callApi';
 
 export default function LoginInputComponent() {
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        const data = {
-            "username": userName,
-            "email": email,
-            "password": password,
-        }
-        API.get('login/', data);
-    }
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -27,6 +19,33 @@ export default function LoginInputComponent() {
     const buttonTheme = {
         background: "yellow",
         textColor: "black"
+    }
+
+    const loading = (isLoading) => {
+        if (isLoading) {
+            setIsLoading(true)
+        } else {
+            setIsLoading(false)
+        }
+    }
+
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+        const data = {
+            "username": userName,
+            "email": email,
+            "password": password,
+        }
+        loading(true);
+
+        const response = await API.get('login/', data);
+
+        loading(false);
+
+        if (response === 'error') {
+
+        }
+
     }
 
     return (
@@ -65,6 +84,8 @@ export default function LoginInputComponent() {
                     </Input.UserInput>
                     <Input.Button color={buttonTheme} type="summit">Login</Input.Button>
                 </Input.LayoutHorizontal>
+
+                {(isLoading) && (<Input.Text>Loading</Input.Text>)}
             </Input.LoginForum>
         </Input >
     );

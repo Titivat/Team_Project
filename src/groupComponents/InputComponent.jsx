@@ -9,8 +9,11 @@ export default function InputComponent() {
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
     }
 
-    const handleSubmit = (evt) => {
-        //evt.preventDefault();
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+
+        loading(true);
+
         const data = {
             "owner": 1,
             "subject": title,
@@ -19,8 +22,25 @@ export default function InputComponent() {
             "reciepient": shareTo,
             "sent": false
         }
-        API.postEvent('mail/', data);
+        const respond = await API.postEvent('mail/', data);
+
+        loading(false);
+
+        if (respond === 'error') {
+
+        }
     }
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const loading = (isLoading) => {
+        if (isLoading) {
+            setIsLoading(true)
+        } else {
+            setIsLoading(false)
+        }
+    }
+
     const [shareTo, setshareTo] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -196,6 +216,8 @@ export default function InputComponent() {
                 </Input.LayoutTimeVertical>
 
                 <Input.Button color={buttonTheme} type="summit">Send</Input.Button>
+
+                {(isLoading) && (<Input.Text>Loading</Input.Text>)}
             </Input.Forum>
         </Input >
     );
