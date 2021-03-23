@@ -13,7 +13,7 @@ export const Forum = styled.form`
     width: 600px;
     height: 650px;
     margin: 40px 30px;
-    padding: 20px;
+    padding: 20px 20px 40px;
     border-radius: 15px;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};

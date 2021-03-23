@@ -54,7 +54,7 @@ Input.Text = function InputText({ children, ...restProps }) {
     );
 };
 
-Input.TextLink= function InputTextLink({ to, children, ...restProps }) {
+Input.TextLink = function InputTextLink({ to, children, ...restProps }) {
     return (
         <ReachRouterLink style={{ textDecoration: 'none' }} to={to}>
             <Text {...restProps}>{children}</Text>

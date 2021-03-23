@@ -2,19 +2,9 @@ import { Input } from '../components'
 import React, { useState } from "react";
 import * as API from '../api/callApi';
 
+export default function RegisterInputComponent({ history }) {
+    const [isLoading, setIsLoading] = useState(false);
 
-export default function RegisterInputComponent() {
-
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        const data = {
-            "username": userName,
-            "email": email,
-            "password1": password1,
-            "password2": password2,
-        }
-        API.post('registration/', data);
-    }
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
@@ -29,6 +19,35 @@ export default function RegisterInputComponent() {
     const buttonTheme = {
         background: "yellow",
         textColor: "black"
+    }
+
+    const loading = (isLoading) => {
+        if (isLoading) {
+            setIsLoading(true)
+        } else {
+            setIsLoading(false)
+        }
+    }
+
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+
+        loading(true);
+
+        const data = {
+            "username": userName,
+            "email": email,
+            "password1": password1,
+            "password2": password2,
+        }
+
+        const respond = await API.post('registration/', data);
+
+        loading(false);
+
+        if( respond === 'error'){
+            
+        }
     }
 
     return (
@@ -74,6 +93,10 @@ export default function RegisterInputComponent() {
                     </Input.UserInput>
                     <Input.Button color={buttonTheme} type="summit">Register</Input.Button>
                 </Input.LayoutHorizontal>
+
+                {
+                    (isLoading) && (<Input.Text>Loading</Input.Text>)
+                }
             </Input.RegisterForum>
         </Input >
     );
