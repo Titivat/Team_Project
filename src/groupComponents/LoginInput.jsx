@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as API from '../api/callApi';
 import * as ROUTE from '../constants/routes';
+import * as COLOR from '../constants/colors';
 
 export default function LoginInputComponent() {
     const [isLoading, setIsLoading] = useState(false);
@@ -13,15 +14,17 @@ export default function LoginInputComponent() {
 
     const history = useHistory();
 
-    const textColor = "red"
-    const backgroundColor = "blue"
-    const theme = {
-        background: backgroundColor,
-        textColor: textColor
+    const textColor = COLOR.DECURLATION_COLOR_1
+    const forumTheme = {
+        background: COLOR.PRIMARY_COLOR_2,
+    }
+    const inputThem = {
+        background: COLOR.PRIMARY_COLOR_1,
+        textColor: COLOR.DECURLATION_COLOR_1
     }
     const buttonTheme = {
-        background: "yellow",
-        textColor: "black"
+        background: COLOR.DECURLATION_COLOR_1,
+        textColor: COLOR.PRIMARY_COLOR_1
     }
 
     const loading = (isLoading) => {
@@ -57,13 +60,13 @@ export default function LoginInputComponent() {
         <Input >
             <Input.LoginForum
                 onSubmit={handleSubmit}
-                color={theme}
+                color={forumTheme}
             >
                 <Input.Title textColor={textColor}>Login</Input.Title>
                 <Input.LayoutHorizontal gap={'30px'}>
 
                     <Input.UserInput
-                        color={theme}
+                        color={inputThem}
                         value={userName}
                         onChange={e => setUserName(e.target.value)}
                         placeholder="user name"
@@ -72,7 +75,7 @@ export default function LoginInputComponent() {
                     </Input.UserInput>
 
                     <Input.UserInput
-                        color={theme}
+                        color={inputThem}
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="email"
@@ -80,7 +83,7 @@ export default function LoginInputComponent() {
                     ></Input.UserInput>
 
                     <Input.UserInput
-                        color={theme}
+                        color={inputThem}
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         placeholder="password"

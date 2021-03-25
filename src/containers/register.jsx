@@ -5,7 +5,7 @@ export default function RegisterContainer() {
     const LinkTextstyle = {
         fontSize: "35px",
         textAlign: 'right',
-        color: 'black',
+        color: '#0247A1',
         margin: '-10% 45% 0 0',
     }
     return (

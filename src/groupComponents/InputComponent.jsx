@@ -75,7 +75,7 @@ export default function InputComponent() {
         textColor: COLOR.DECURLATION_COLOR_1
     };
     const buttonTheme = {
-        background: COLOR.DECURLATION_COLOR_2,
+        background: COLOR.DECURLATION_COLOR_1,
         textColor: COLOR.PRIMARY_COLOR_1
     };
 
@@ -90,7 +90,7 @@ export default function InputComponent() {
                     color={inputTheme}
                     value={shareTo}
                     onChange={e => setshareTo(e.target.value)}
-                    placeholder="share to"
+                    placeholder="Share to"
                     required
                 >
                 </Input.UserInput>
@@ -107,7 +107,7 @@ export default function InputComponent() {
                     color={inputTheme}
                     value={description}
                     onChange={e => setDescription(e.target.value)}
-                    placeholder="description"
+                    placeholder="Description"
                     required
                 >
                 </Input.Description>

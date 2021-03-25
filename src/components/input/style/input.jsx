@@ -25,7 +25,7 @@ export const Forum = styled.form`
 `;
 
 export const LoginForum = styled(Forum)`
-    margin: 3% 3%;
+    margin: 10% 17%;
     width: 420px;
     height: 400px;
 
