@@ -43,19 +43,21 @@ export default function RegisterInputComponent({ history }) {
 
         const response = await API.post('registration/', data);
 
+
         loading(false);
 
         if (Object.prototype.toString.call(response) === "[object Error]") {
-            alert("Error " + response.message);
+            alert("Error " + response.message)
         } else {
             alert("It work ");
         }
     }
 
+
     return (
         <Input>
             <Input.RegisterForum
-                onSubmit={handleSubmit}
+                onSubmit={ handleSubmit}
                 color={theme}
             >
                 <Input.Title textColor={textColor}>Register</Input.Title>

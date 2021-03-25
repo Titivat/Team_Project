@@ -1,7 +1,6 @@
 import { RegisterInput } from '../groupComponents'
 import { Layout, Input } from '../components'
 
-
 export default function RegisterContainer() {
     const LinkTextstyle = {
         fontSize: "35px",
