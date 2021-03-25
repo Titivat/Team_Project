@@ -1,6 +1,8 @@
 import { Input } from '../components'
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import * as API from '../api/callApi';
+import * as ROUTE from '../constants/routes';
 
 export default function LoginInputComponent() {
     const [isLoading, setIsLoading] = useState(false);
@@ -9,6 +11,7 @@ export default function LoginInputComponent() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const history = useHistory();
 
     const textColor = "red"
     const backgroundColor = "blue"
@@ -45,7 +48,7 @@ export default function LoginInputComponent() {
         if (Object.prototype.toString.call(response) === "[object Error]") {
             alert("Error " + response.message);
         } else {
-            alert("It work ");
+            history.push(ROUTE.EVENT)
         }
 
     }
