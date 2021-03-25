@@ -4,7 +4,7 @@ export default function Login() {
 
     return (
         <>
-            <HeaderContainer isLogin={true} />
+            <HeaderContainer isLogin />
             <LoginContainer/>
         </>
     )

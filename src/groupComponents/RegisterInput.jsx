@@ -1,6 +1,7 @@
 import { Input } from '../components'
 import React, { useState } from "react";
 import * as API from '../api/callApi';
+import * as ROUTE from '../constants/routes';
 
 export default function RegisterInputComponent({ history }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -43,16 +44,14 @@ export default function RegisterInputComponent({ history }) {
 
         const response = await API.post('registration/', data);
 
-
         loading(false);
 
         if (Object.prototype.toString.call(response) === "[object Error]") {
             alert("Error " + response.message)
         } else {
-            alert("It work ");
+            history.push(ROUTE.EVENT)
         }
     }
-
 
     return (
         <Input>
