@@ -37,12 +37,11 @@ export const LoginForum = styled(Forum)`
 export const RegisterForum = styled(Forum)`
     width: 420px;
     height: 500px;
-    margin: 5% auto;
+    margin: 15% auto;
 
     @media only screen and (max-width: 1200px){
         margin: 5% 0 0 4%;
     }
-
 
     @media only screen and (max-width: 600px){
         margin: 5% 5px;
@@ -66,14 +65,18 @@ export const UserInput = styled.input`
     border-radius: 7px;
     width: 100%;
     height: 55px;
+    border-style: none;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};
 `;
 
 export const Description = styled.textarea`
+    border-radius: 10px;
     width: 100%;
     height: 460px;
     font-size: 30px;
+    border-style: none;
+    resize: none;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};
 `;
@@ -82,6 +85,8 @@ export const Button = styled.button`
     border-radius: 7px;
     width: 100%;
     height: 60px;
+    font-size: 20px;
+    border-style: none;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};
 `;
@@ -105,6 +110,7 @@ export const DroupDownMenu = styled.select`
     border-radius: 6px;
     width: 95px;
     height: 40px;
+    border-style: none;
     background: ${({ color }) => color.background};
     color: ${({ color }) => color.textColor};
     size: 20px;

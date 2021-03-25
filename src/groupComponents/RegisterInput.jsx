@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as API from '../api/callApi';
 import * as ROUTE from '../constants/routes';
+import * as COLOR from '../constants/colors';
 
 export default function RegisterInputComponent() {
     const [isLoading, setIsLoading] = useState(false);
@@ -14,15 +15,18 @@ export default function RegisterInputComponent() {
 
     const history = useHistory();
 
-    const textColor = "red"
-    const backgroundColor = "blue"
-    const theme = {
-        background: backgroundColor,
-        textColor: textColor
+    const textColor = COLOR.DECURLATION_COLOR_1
+    const inputTheme = {
+        background: COLOR.PRIMARY_COLOR_1,
+        textColor: COLOR.DECURLATION_COLOR_1
+    }
+    const forumTheme = {
+        background: COLOR.PRIMARY_COLOR_2,
+        textColor: COLOR.DECURLATION_COLOR_1
     }
     const buttonTheme = {
-        background: "yellow",
-        textColor: "black"
+        background: COLOR.DECURLATION_COLOR_1,
+        textColor:  COLOR.PRIMARY_COLOR_1
     }
 
     const loading = (isLoading) => {
@@ -60,12 +64,12 @@ export default function RegisterInputComponent() {
         <Input>
             <Input.RegisterForum
                 onSubmit={handleSubmit}
-                color={theme}
+                color={forumTheme}
             >
                 <Input.Title textColor={textColor}>Register</Input.Title>
                 <Input.LayoutHorizontal gap={'30px'}>
                     <Input.UserInput
-                        color={theme}
+                        color={inputTheme}
                         value={userName}
                         onChange={e => setUserName(e.target.value)}
                         placeholder="user name"
@@ -74,7 +78,7 @@ export default function RegisterInputComponent() {
                     </Input.UserInput>
 
                     <Input.UserInput
-                        color={theme}
+                        color={inputTheme}
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="email"
@@ -82,7 +86,7 @@ export default function RegisterInputComponent() {
                     ></Input.UserInput>
 
                     <Input.UserInput
-                        color={theme}
+                        color={inputTheme}
                         value={password1}
                         onChange={e => setPassword1(e.target.value)}
                         placeholder="password"
@@ -90,7 +94,7 @@ export default function RegisterInputComponent() {
                     >
                     </Input.UserInput>
                     <Input.UserInput
-                        color={theme}
+                        color={inputTheme}
                         value={password2}
                         onChange={e => setPassword2(e.target.value)}
                         placeholder="conferm password"

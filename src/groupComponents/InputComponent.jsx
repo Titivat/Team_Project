@@ -2,6 +2,8 @@ import { Input } from '../components'
 import React, { useState } from "react";
 import { toIso } from '../function'
 import * as API from '../api/callApi';
+import * as COLOR from '../constants/colors';
+
 
 export default function InputComponent() {
     const range = (start, end) => {
@@ -21,11 +23,12 @@ export default function InputComponent() {
             "reciepient": shareTo,
             "sent": false
         }
+
         const respond = await API.postEvent('mail/', data);
 
         loading(false);
 
-        if (respond === 201) {
+        if (respond.status === 201) {
             alert("sent successfully")
         }
     }
@@ -62,26 +65,29 @@ export default function InputComponent() {
     const minutes = range(0, 59);
     const secounds = range(0, 59);
 
-    const textColor = "red"
-    const backgroundColor = "blue"
-    const theme = {
-        background: backgroundColor,
-        textColor: textColor
+    const textColor = COLOR.DECURLATION_COLOR_1
+    const inputTheme = {
+        background: COLOR.PRIMARY_COLOR_1,
+        textColor: COLOR.DECURLATION_COLOR_1
     }
+    const forumTheme = {
+        background: COLOR.PRIMARY_COLOR_2,
+        textColor: COLOR.DECURLATION_COLOR_1
+    };
     const buttonTheme = {
-        background: "yellow",
-        textColor: "black"
-    }
+        background: COLOR.DECURLATION_COLOR_2,
+        textColor: COLOR.PRIMARY_COLOR_1
+    };
 
     return (
         <Input >
             <Input.Forum
                 onSubmit={handleSubmit}
-                color={theme}
+                color={forumTheme}
             >
                 <Input.Title textColor={textColor}>Try it</Input.Title>
                 <Input.UserInput
-                    color={theme}
+                    color={inputTheme}
                     value={shareTo}
                     onChange={e => setshareTo(e.target.value)}
                     placeholder="share to"
@@ -90,7 +96,7 @@ export default function InputComponent() {
                 </Input.UserInput>
 
                 <Input.UserInput
-                    color={theme}
+                    color={inputTheme}
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     placeholder="Title"
@@ -98,7 +104,7 @@ export default function InputComponent() {
                 ></Input.UserInput>
 
                 <Input.Description
-                    color={theme}
+                    color={inputTheme}
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     placeholder="description"
@@ -112,15 +118,15 @@ export default function InputComponent() {
                     <Input.LayoutHorizontal>
                         <Input.Text textColor={textColor}>Day:</Input.Text>
                         <Input.DroupDownMenu
-                            color={theme}
+                            color={inputTheme}
                             value={day}
                             onChange={e => setDay(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                             {
                                 days.map((value) => {
-                                    return <Input.DroupDownItem color={theme} >{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={inputTheme} >{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
@@ -129,15 +135,15 @@ export default function InputComponent() {
                     <Input.LayoutHorizontal>
                         <Input.Text textColor={textColor}>Month:</Input.Text>
                         <Input.DroupDownMenu
-                            color={theme}
+                            color={inputTheme}
                             value={month}
                             onChange={e => setMonth(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                             {
                                 months.map((value) => {
-                                    return <Input.DroupDownItem color={theme} >{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={inputTheme} >{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
@@ -146,33 +152,33 @@ export default function InputComponent() {
                     <Input.LayoutHorizontal>
                         <Input.Text textColor={textColor} >Year:</Input.Text>
                         <Input.DroupDownMenu
-                            color={theme}
+                            color={inputTheme}
                             value={year}
                             onChange={e => setYear(e.target.value)}
                             required
                         >
-                            <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                            <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                             {
                                 years.map((value) => {
-                                    return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
+                                    return <Input.DroupDownItem color={inputTheme}>{value}</Input.DroupDownItem>
                                 })
                             }
                         </Input.DroupDownMenu>
                     </Input.LayoutHorizontal>
 
-                    <Input.LayoutVertical>
+                    <Input.LayoutVertical gap ='4px'>
                         <Input.LayoutHorizontal>
                             <Input.Text textColor={textColor}>Hr:</Input.Text>
                             <Input.DroupDownMenu
-                                color={theme}
+                                color={inputTheme}
                                 value={hour}
                                 onChange={e => setHour(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                                 {
                                     hours.map((value) => {
-                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={inputTheme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>
@@ -181,15 +187,15 @@ export default function InputComponent() {
                         <Input.LayoutHorizontal>
                             <Input.Text textColor={textColor}>Min:</Input.Text>
                             <Input.DroupDownMenu
-                                color={theme}
+                                color={inputTheme}
                                 value={minute}
                                 onChange={e => setMinute(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                                 {
                                     minutes.map((value) => {
-                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={inputTheme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>
@@ -198,15 +204,15 @@ export default function InputComponent() {
                         <Input.LayoutHorizontal>
                             <Input.Text textColor={textColor}>Sec:</Input.Text>
                             <Input.DroupDownMenu
-                                color={theme}
+                                color={inputTheme}
                                 value={secound}
                                 onChange={e => setSecound(e.target.value)}
                                 required
                             >
-                                <Input.DroupDownItem color={theme} value="">None</Input.DroupDownItem>
+                                <Input.DroupDownItem color={inputTheme} value="">None</Input.DroupDownItem>
                                 {
                                     secounds.map((value) => {
-                                        return <Input.DroupDownItem color={theme}>{value}</Input.DroupDownItem>
+                                        return <Input.DroupDownItem color={inputTheme}>{value}</Input.DroupDownItem>
                                     })
                                 }
                             </Input.DroupDownMenu>

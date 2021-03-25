@@ -39,7 +39,7 @@ export const postEvent = async function postEvent(path, postData) {
             data: postData,
             json: true
         });
-        return response.status;
+        return response;
     } catch (err) {
         alert("Error " + err.message);
         return err

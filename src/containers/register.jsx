@@ -6,11 +6,11 @@ export default function RegisterContainer() {
         fontSize: "35px",
         textAlign: 'right',
         color: 'black',
-        margin: '-20px 45% 0 0',
+        margin: '-10% 45% 0 0',
     }
     return (
         <Layout.RegisterContainer>
-            <Layout.Container style={{backgroundColor:"black"}}>
+            <Layout.Container style={{ backgroundColor: "#CAF0F8", height: '115%' }}>
 
             </Layout.Container>
             <Layout.Container>
