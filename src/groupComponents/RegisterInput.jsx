@@ -1,15 +1,18 @@
 import { Input } from '../components'
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import * as API from '../api/callApi';
 import * as ROUTE from '../constants/routes';
 
-export default function RegisterInputComponent({ history }) {
+export default function RegisterInputComponent() {
     const [isLoading, setIsLoading] = useState(false);
 
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
+
+    const history = useHistory();
 
     const textColor = "red"
     const backgroundColor = "blue"
@@ -49,14 +52,14 @@ export default function RegisterInputComponent({ history }) {
         if (Object.prototype.toString.call(response) === "[object Error]") {
             alert("Error " + response.message)
         } else {
-            history.push(ROUTE.EVENT)
+            history.push(ROUTE.EVENT);
         }
     }
 
     return (
         <Input>
             <Input.RegisterForum
-                onSubmit={ handleSubmit}
+                onSubmit={handleSubmit}
                 color={theme}
             >
                 <Input.Title textColor={textColor}>Register</Input.Title>
