@@ -42,7 +42,7 @@ export default function LoginInputComponent() {
         }
         loading(true);
 
-        const response = await API.get('auth/jwt/create/', data);
+        const response = await API.post('auth/jwt/create/', data);
 
         loading(false);
 
