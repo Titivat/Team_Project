@@ -9,7 +9,6 @@ export default function LoginInputComponent() {
     const [isLoading, setIsLoading] = useState(false);
 
     const [userName, setUserName] = useState("");
-    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const history = useHistory();
@@ -39,12 +38,11 @@ export default function LoginInputComponent() {
         evt.preventDefault();
         const data = {
             "username": userName,
-            "email": email,
             "password": password,
         }
         loading(true);
 
-        const response = await API.get('login/', data);
+        const response = await API.get('auth/jwt/create/', data);
 
         loading(false);
 
@@ -53,7 +51,6 @@ export default function LoginInputComponent() {
         } else {
             history.push(ROUTE.EVENT)
         }
-
     }
 
     return (
@@ -73,14 +70,6 @@ export default function LoginInputComponent() {
                         required
                     >
                     </Input.UserInput>
-
-                    <Input.UserInput
-                        color={inputThem}
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        placeholder="email"
-                        required
-                    ></Input.UserInput>
 
                     <Input.UserInput
                         color={inputThem}

@@ -10,8 +10,7 @@ export default function RegisterInputComponent() {
 
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
-    const [password1, setPassword1] = useState("");
-    const [password2, setPassword2] = useState("");
+    const [password, setPassword] = useState("");
 
     const history = useHistory();
 
@@ -26,7 +25,7 @@ export default function RegisterInputComponent() {
     }
     const buttonTheme = {
         background: COLOR.DECURLATION_COLOR_1,
-        textColor:  COLOR.PRIMARY_COLOR_1
+        textColor: COLOR.PRIMARY_COLOR_1
     }
 
     const loading = (isLoading) => {
@@ -45,11 +44,10 @@ export default function RegisterInputComponent() {
         const data = {
             "username": userName,
             "email": email,
-            "password1": password1,
-            "password2": password2,
+            "password": password,
         }
 
-        const response = await API.post('registration/', data);
+        const response = await API.post('auth/users/', data);
 
         loading(false);
 
@@ -87,17 +85,9 @@ export default function RegisterInputComponent() {
 
                     <Input.UserInput
                         color={inputTheme}
-                        value={password1}
-                        onChange={e => setPassword1(e.target.value)}
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                         placeholder="password"
-                        required
-                    >
-                    </Input.UserInput>
-                    <Input.UserInput
-                        color={inputTheme}
-                        value={password2}
-                        onChange={e => setPassword2(e.target.value)}
-                        placeholder="conferm password"
                         required
                     >
                     </Input.UserInput>
